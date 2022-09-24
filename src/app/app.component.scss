@@ -1,4 +1,25 @@
-nav {
-    background-color: #4aaaeb;
-    height: 100px;
+nav{
+    position: absolute;
+    top: 1%;
+    right: 3%;
+
+    ul {
+        list-style: none;
+        display: flex;
+
+        li{
+            margin-left: 40px;
+            font-weight: bold;
+            padding:2px 5px;
+            -webkit-text-shadow: 10px 4px 5px #eeeeee;
+            -moz-text-shadow: 10px 4px 5px #eeeeee;
+            text-shadow: 10px 4px 5px #eeeeee;
+            cursor: pointer;
+            
+
+            &.active {
+                border-bottom: 3px solid #3282e6;
+            }
+        }
+    }
 }

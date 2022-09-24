@@ -1,17 +1,9 @@
-<div>
-  <nav>
-    <div class="logo">
-      Gonzalo
-    </div>
-    <ul>
-      <li>About</li>
-      <li>Work</li>
-      <li>Projects</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+      <li routerLink="/home" [routerLinkActive]="'active'">Home</li>
+      <li routerLink="/experience"  [routerLinkActive]="'active'">Experience</li>
+      <li routerLink="/projects"  [routerLinkActive]="'active'">Projects</li>
+  </ul>
+</nav>
 
-  <div>
-
-  </div>
-</div>
+<router-outlet></router-outlet>
