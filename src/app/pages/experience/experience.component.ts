@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
+  experiences = [
+    {
+      employer: 'Test',
+      from: new Date(),
+      to: new Date(),
+      description: '',
+      
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
