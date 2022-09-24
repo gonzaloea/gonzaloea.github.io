@@ -1,6 +1,30 @@
 <div class="container">
-
-
+    <div class="experiences">
+        <div class="experience" *ngFor="let experience of experiences">
+            <div class="logo-container">
+                <img class="logo" src='{{experience.logo}}'>
+            </div>
+            <div class="experience-data">
+                <p class="title">
+                    {{experience.title}}
+                </p>
+                <div class="second-line">
+                    <p class="employer">
+                        {{experience.employer}}
+                    </p>
+                    <p class="dates">
+                        {{experience.from | date: 'MMM. YYYY'}} - {{experience.to !== undefined ? (experience.to | date: 'MMM. YYYY') : 'Present'}} ({{ experience.to !== undefined ? yearsDiff(experience.from, experience.to) : yearsDiffFromNow(experience.from) }} yrs.)
+                    </p>
+                </div>
+    
+                <div class="skills">
+                    <p>Skills: </p> 
+                    <p class="skill" *ngFor="let skill of experience.skills"> {{skill}} </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 
     <div class="circle"></div>
 </div>
