@@ -8,7 +8,7 @@
         font-size: 25px;
         top: 2%;
         left: 3%;
-        animation: 2s cubic-bezier(0, 0, 0, 0.99) 0s fade;
+        animation: 1s linear 0s fade;
     }
 
     .experiences {
@@ -25,18 +25,32 @@
 
         .experience{
             margin-bottom: 30px;
-            background-color: #a5d1ff;
+            background-color: #d4e9ff;
+            border: 1px solid #a8c9ff;
             display: flex;
             opacity: 0;
+            position: relative;
             border-radius: 10px;
             --index: 0;
-            animation: 1s linear calc(0.25s + (0.25s * var(--index))) fade;
+            animation: 0.5s linear calc(0.15s + (0.15s * var(--index))) fade;
             animation-fill-mode: forwards;
             box-shadow: 0px 8px 8px #0000000d;
             text-decoration: inherit;
+            overflow: hidden;
             color: inherit;
             &:last-child {
                 margin-bottom: 0;
+            }
+
+            .circle {
+                background-color: #c8e3ffbd;
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                z-index: -1;
+                border-radius: 100%;
+                top: -50%;
+                left: -12%;
             }
 
 
@@ -46,7 +60,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 20px 60px;
+                margin: 20px 135px 20px 60px;
 
                 .logo {
                     display: block;
@@ -104,19 +118,4 @@
         }
         
     }
-
-  
-    
-    .circle{
-        position: absolute;
-        background-color: #d2e6ff;
-        border-radius: 100%;
-        height: 200vw;
-        width: 200vw;
-        top: 50%;
-        left: -50%;
-        z-index:-1;
-        animation: 1s cubic-bezier(0, 0, 0, 0.99) 0s rise;
-    }
-
 }

@@ -1,9 +1,8 @@
 <div class="container">
     <div class="name">Gonzalo.</div>
-
-
     <div class="projects">
         <a class="project" *ngFor="let project of projects; let i = index" style="--index: {{i}};" href="{{project.url}}">
+            <div class="circle"></div>
             <div class="logo-container">
                 <img class="logo" src='{{project.logo}}'>
             </div>
@@ -21,8 +20,5 @@
                 </div>
             </div>
         </a>
-
     </div>
-
-    <div class="circle"></div>
 </div>

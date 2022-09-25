@@ -25,6 +25,16 @@ body {
 }
 
 
+@keyframes slide {
+    from {
+        transform: translateX(10vh);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
 @keyframes rise {
     from {
         transform: translateY(10vh);
