@@ -13,18 +13,18 @@
         .name {
             font-size: 3.5rem;
             font-weight: bold;
-            -webkit-text-shadow: 10px 4px 5px #eeeeee;
-            -moz-text-shadow: 10px 4px 5px #eeeeee;
-            text-shadow: 10px 4px 5px #eeeeee;
+            -webkit-text-shadow: 10px 4px 5px #00000029;
+            -moz-text-shadow: 10px 4px 5px #00000029;
+            text-shadow: 10px 4px 5px #00000029;
         }
     
         .role {
             font-size: 3.0rem;
             font-weight: bold;
             color: #3282e6;
-            -webkit-text-shadow: 10px 4px 5px #eeeeee;
-            -moz-text-shadow: 10px 4px 5px #eeeeee;
-            text-shadow: 10px 4px 5px #eeeeee;
+            -webkit-text-shadow: 10px 4px 5px #00000029;
+            -moz-text-shadow: 10px 4px 5px #00000029;
+            text-shadow: 10px 4px 5px #00000029;
     
         }
     
@@ -70,24 +70,7 @@
         justify-content: center;
         a {
             margin: 30px;
+            animation: 2s cubic-bezier(0, 0, 0, 0.99) 0s fade;
         }
-    }
-}
-
-@keyframes rise {
-    from {
-        transform: translateY(10vh);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100%;
     }
 }

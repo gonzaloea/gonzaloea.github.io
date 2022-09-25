@@ -1,5 +1,28 @@
 <div class="container">
+    <div class="name">Gonzalo.</div>
 
+
+    <div class="projects">
+        <a class="project" *ngFor="let project of projects; let i = index" style="--index: {{i}};" href="{{project.url}}">
+            <div class="logo-container">
+                <img class="logo" src='{{project.logo}}'>
+            </div>
+            <div class="project-data">
+                <p class="title">
+                    {{project.name}}
+                </p>
+                <div class="second-line">
+                   {{project.description}}
+                </div>
+    
+                <div class="technologies">
+                    <p>Technology: </p> 
+                    <p class="technology" *ngFor="let technology of project.technologies"> {{technology}} </p>
+                </div>
+            </div>
+        </a>
+
+    </div>
 
     <div class="circle"></div>
 </div>
