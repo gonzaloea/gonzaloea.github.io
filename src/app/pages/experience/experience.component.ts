@@ -14,9 +14,9 @@ export class ExperienceComponent implements OnInit {
       logo: 'https://seeklogo.com/images/U/uala-logo-7959775EA9-seeklogo.com.png',
       employer: 'Uala\u0301',
       to: undefined,
-      from: new Date(2022,6,1),
+      from: new Date(2022,6,2),
       description: '',
-      skills: [ 'Java', 'DynamoDB', 'AWS', 'Terraform', 'Terragrunt', 'TDD']
+      technologies: [ 'Java', 'DynamoDB', 'AWS', 'Terraform', 'Terragrunt']
     },{
       title: 'Technical Lead',
       url: 'http://vantek.io/',
@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit {
       to: new Date(2022,6,1),
       from: new Date(2021,6,1),
       description: '',
-      skills: ['Coaching', 'Team Leadership', 'Ionic', 'Java', 'Angular']
+      technologies:  ['Bash', 'Jenkins', 'Ionic', 'Java', 'Spring Framework', 'Angular', 'PostgreSQL']
     },{
       title: 'FullStack Engineer',
       url: 'http://vantek.io/',
@@ -34,16 +34,7 @@ export class ExperienceComponent implements OnInit {
       to: new Date(2021,6,1),
       from: new Date(2019,7,1),
       description: '',
-      skills: ['Bash', 'DevOps', 'Ionic', 'Java', 'Spring Framework', 'Angular', 'PostgreSQL']
-    },{
-      title: 'FullStack Developer',
-      employer: 'Keepcon',
-      url: 'https://keepcon.com/',
-      logo: 'https://contactcentersonline.com/wp-content/uploads/2021/01/Keepcon-Logos_Logotipo-1-e1609823381566.png',
-      to: new Date(2019,7,1),
-      from: new Date(2017,11,1),
-      description: '',
-      skills: ['Ruby on Rails', 'Vue.js', 'DevOps', 'TDD', 'Ruby', 'PostgreSQL']
+      technologies: ['Bash', 'Jenkins', 'Ionic', 'Java', 'Spring Framework', 'Angular', 'PostgreSQL']
     },{
       title: 'Software Developer',
       employer: 'Codementor',
@@ -52,7 +43,16 @@ export class ExperienceComponent implements OnInit {
       to: new Date(2018,10,1),
       from: new Date(2018,6,1),
       description: '',
-      skills: ['Algorithm Desing', 'Python', 'Java', 'SQL', 'Ruby']
+      technologies: ['Algorithm Desing', 'Python', 'Java', 'SQL', 'Ruby']
+    },{
+      title: 'FullStack Developer',
+      employer: 'Keepcon',
+      url: 'https://keepcon.com/',
+      logo: 'https://contactcentersonline.com/wp-content/uploads/2021/01/Keepcon-Logos_Logotipo-1-e1609823381566.png',
+      to: new Date(2019,7,1),
+      from: new Date(2017,11,1),
+      description: '',
+      technologies: ['Ruby on Rails', 'Vue.js', 'DevOps', 'Ruby', 'PostgreSQL']
     },{
       title: 'Software Developer',
       employer: 'Lumina Americas',
@@ -61,7 +61,7 @@ export class ExperienceComponent implements OnInit {
       to: new Date(2017,11,1),
       from: new Date(2014,2,1),
       description: '',
-      skills: ['Oracle Database', 'Java Swing', 'Java', 'Spring Framework', 'PL/SQL']
+      technologies: ['Oracle Database', 'Java Swing', 'Java', 'Spring Framework', 'PL/SQL']
     }
   ]
 

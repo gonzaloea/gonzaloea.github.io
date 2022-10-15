@@ -9,20 +9,17 @@
                 </div>
                 <div class="experience-data">
                     <p class="title">
-                        {{experience.title}}
+                        {{experience.title}} @ {{experience.employer}}
                     </p>
                     <div class="second-line">
-                        <p class="employer">
-                        at <b>{{experience.employer}}</b>
-                        </p>
                         <p class="dates">
                             {{experience.from | date: 'MMM. YYYY'}} - {{experience.to !== undefined ? (experience.to | date: 'MMM. YYYY') : 'Present'}} ({{ experience.to !== undefined ? yearsDiff(experience.from, experience.to) : yearsDiffFromNow(experience.from) }} yrs. {{ experience.to !== undefined ? monthsDiff(experience.from, experience.to) : monthsDiffFromNow(experience.from) }} mon.)
                         </p>
                     </div>
         
-                    <div class="skills">
-                        <p>Skills: </p> 
-                        <p class="skill" *ngFor="let skill of experience.skills"> {{skill}} </p>
+                    <div class="technologies">
+                        <p>Technologies: </p> 
+                        <p class="technology" *ngFor="let technology of experience.technologies"> {{technology}} </p>
                     </div>
                 </div>
                 

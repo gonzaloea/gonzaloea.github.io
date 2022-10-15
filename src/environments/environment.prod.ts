@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  analyticsId: 'G-MC080359QH'
 };
