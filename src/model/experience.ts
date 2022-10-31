@@ -1,9 +1,12 @@
 import { Job } from "./job";
+import { Project } from "./project";
 
 export class Experience {
-    private jobs: Array<Job>;
+    private jobs: Job[];
+    private projects: Project[];
 
-    constructor(jobs: Array<Job>) {
+    constructor(jobs: Job[], projects: Project[]) {
         this.jobs = jobs;
+        this.projects = projects;
     }
 }
