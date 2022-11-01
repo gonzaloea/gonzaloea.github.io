@@ -1,5 +1,5 @@
-import { Month } from "./date/month";
-import { Year } from "./date/year";
+import { Month } from "./month";
+import { Year } from "./year";
 
 export class TimeInterval {
     static readonly ERROR_INVALID_INTERVAL : string = "Invalid dates interval";

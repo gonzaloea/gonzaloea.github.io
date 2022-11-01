@@ -1,5 +1,5 @@
-import { Month } from "./date/month";
-import { Year } from "./date/year";
+import { Month } from "./month";
+import { Year } from "./year";
 import { DaysDifference, HoursDifference, MinutesDifference, MonthsDifference, SecondsDifference, TimeInterval, YearsDifference } from "./time-interval";
 
 describe('TimeInterval', ()=> {

@@ -2,7 +2,7 @@ import { Month } from "./month";
 import { LeapYearMonths, YearMonths } from "./year-months";
 
 export class Year {
-    protected number: number;
+    protected _number: number;
     protected yearMonths: YearMonths;
 
     public static at(number: number) : Year {
@@ -11,7 +11,7 @@ export class Year {
     }
 
     protected constructor(number: number){
-        this.number = number;
+        this._number = number;
         this.yearMonths = new YearMonths(this);
     }
 
@@ -34,6 +34,10 @@ export class Year {
     public difference(year: Year): number {
         return this.number - year.number;
     }
+
+    public get number() : number {
+        return this._number;
+    }   
 }
 
 class LeapYear extends Year{

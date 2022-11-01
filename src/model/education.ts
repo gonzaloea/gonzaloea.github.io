@@ -1,15 +1,27 @@
 import { Year } from "./date/year";
-import { TimeInterval } from "./time-interval";
+import { TimeInterval } from "./date/time-interval";
 
 export class Education {
-    private highSchoolCourse: Course;
-    private degree: Course;
-    private certifications: Certification[];
+    private _highSchoolCourse: Course;
+    private _degree: Course;
+    private _certifications: Certification[];
 
     constructor(highSchoolCourse: Course, degree: Course, certifications: Certification[]){
-        this.highSchoolCourse = highSchoolCourse;
-        this.degree = degree;
-        this.certifications = certifications;
+        this._highSchoolCourse = highSchoolCourse;
+        this._degree = degree;
+        this._certifications = certifications;
+    }
+
+    public get highSchool() : Course {
+        return this._highSchoolCourse;
+    }
+
+    public get degree() : Course {
+        return this._degree;
+    }
+
+    public get certifications() : Certification[] {
+        return this._certifications;
     }
 }
 
@@ -37,12 +49,19 @@ export class FinishedCourse extends Course{
 }
 
 export class Certification{
-    title: string;
-    year: Year;
+    _title: string;
+    _year: Year;
 
     constructor(title: string, year: Year) {
-        this.title = title;
-        this.year = year;
+        this._title = title;
+        this._year = year;
     }
 
+    public get title(): string {
+        return this.title;
+    }
+
+    public get year(): number {
+        return this._year.number;
+    }
 }
