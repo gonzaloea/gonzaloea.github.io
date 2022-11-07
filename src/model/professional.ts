@@ -7,13 +7,17 @@ import { Project } from "./project";
 export class Professional {
     private _name: string;
     private _surname: string;
+    private _description: string;
+    private _title: string;
     private _experience: Experience;
     private _education: Education;
     private _contactInformation: ContactInformation;
 
-    constructor(name: string, surname: string, experience: Experience, education: Education, contactInformation: ContactInformation){
+    constructor(name: string, surname: string, title: string, description: string, experience: Experience, education: Education, contactInformation: ContactInformation){
         this._name = name;
         this._surname = surname;
+        this._title = title;
+        this._description = description;
         this._experience = experience;
         this._education = education;
         this._contactInformation = contactInformation;
@@ -23,9 +27,17 @@ export class Professional {
         return this._name;
     }
 
+    public get description() : string {
+      return this._description;
+  }
+
     public get surname(): string {
         return this._surname;
     }
+
+    public get title(): string {
+      return this._title;
+  }
 
     public get jobs(): Job[] {
         return this._experience.jobs;
@@ -46,6 +58,5 @@ export class Professional {
     public get phoneNumber(): string {
         return this._contactInformation.phoneNumber;
     }
-
 
 }

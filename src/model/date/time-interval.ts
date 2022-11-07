@@ -64,7 +64,7 @@ export class TimeDifference {
         let monthTo = yearTo.monthByNumber(to.getMonth());
         this.seconds = SecondsDifference.between(from.getSeconds(), to.getSeconds());
         this.minutes = MinutesDifference.betweenWithSecondsDifference(from.getMinutes(), to.getMinutes(), this.seconds);
-        this.hours = HoursDifference.betweenWithMinutesDifference(from.getMinutes(), to.getMinutes(), this.minutes);
+        this.hours = HoursDifference.betweenWithMinutesDifference(from.getHours(), to.getHours(), this.minutes);
         this.days = DaysDifference.betweenWithHoursDifference(from.getDate(), monthFrom, to.getDate(), monthTo, this.hours);
         this.months = MonthsDifference.betweenWithDaysDifference(monthFrom, monthTo, this.days);
         this.years = YearsDifference.betweenWithMonthsDifference(yearFrom, yearTo, this.months);
@@ -145,7 +145,7 @@ export class MinutesDifference {
     static readonly MIN_MINUTES: number = 0;
     static readonly MAX_MINUTES: number = 60;
     static readonly DEFAULT: MinutesDifference = new MinutesDifference(0,0, SecondsDifference.DEFAULT);
-    
+
     private from: number;
     private to: number;
     private secondsDifference: SecondsDifference;
@@ -200,7 +200,7 @@ export class HoursDifference {
     static readonly MIN_HOURS: number = 0;
     static readonly MAX_HOURS: number = 24;
     static readonly DEFAULT: HoursDifference = new HoursDifference(0,0, MinutesDifference.DEFAULT);
-    
+
     private from: number;
     private to: number;
     private minutesDifference: MinutesDifference;
@@ -244,7 +244,7 @@ export class HoursDifference {
         let difference = this.difference();
         if(difference < 0){
             return -1;
-        } 
+        }
         return 0;
     }
 }
@@ -253,12 +253,12 @@ export class DaysDifference {
     static readonly MIN_DAYS: number = 0;
     static readonly DEFAULT: DaysDifference = new DaysDifference(0, Year.at(1900).monthByNumber(1), 0, Year.at(1900).monthByNumber(1), HoursDifference.DEFAULT);
     static readonly ERROR_INVALID_DAYS_FORMAT: string = "The day should be a number between 0 and max day of the month";
-    
+
     private from: number;
     private monthFrom: Month;
     private to: number;
     private hoursDifference: HoursDifference;
-    
+
 
     static betweenWithHoursDifference(from: number, monthFrom: Month, to: number, monthTo: Month, hoursDifference: HoursDifference){
         this.assertIsDays(from, monthFrom);
@@ -299,7 +299,7 @@ export class DaysDifference {
         let difference = this.difference();
         if(difference < 0){
             return -1;
-        } 
+        }
         return 0;
     }
 }
@@ -307,11 +307,11 @@ export class DaysDifference {
 export class MonthsDifference {
     static readonly MAX_MONTHS: number = 12;
     static readonly DEFAULT: MonthsDifference = new MonthsDifference(Year.at(1900).monthByNumber(1), Year.at(1900).monthByNumber(1), DaysDifference.DEFAULT);
-   
+
     private from: Month;
     private to: Month;
     private daysDifference: DaysDifference;
-    
+
 
     static betweenWithDaysDifference(from: Month, to: Month, daysDifference: DaysDifference){
         return new this(from, to, daysDifference);
@@ -343,7 +343,7 @@ export class MonthsDifference {
         let difference = this.difference();
         if(difference < 0){
             return -1;
-        } 
+        }
         return 0;
     }
 }
@@ -354,7 +354,7 @@ export class YearsDifference {
     private from: Year;
     private to: Year;
     private monthsDifference: MonthsDifference;
-    
+
 
     static betweenWithMonthsDifference(from: Year, to: Year, monthsDifference: MonthsDifference){
         this.assertValidRange(from,to);

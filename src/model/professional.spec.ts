@@ -11,7 +11,7 @@ describe('Professional', ()=> {
         let projects: Project[] = [];
         let certifications: Certification[] = [];
         let contactInformation: ContactInformation = ContactInformation.with("test@test.com", "5411111111");
-        let professional = new Professional("test", "surname",new Experience(jobs, projects), new Education(new Course('test', 'test', new Date()), new Course('test', 'test', new Date()), certifications), contactInformation);
+        let professional = new Professional("test", "surname", "title", "description",new Experience(jobs, projects), new Education(new Course('test', 'test', new Date()), new Course('test', 'test', new Date()), certifications), contactInformation);
         expect(professional).toBeInstanceOf(Professional);
     })
 })

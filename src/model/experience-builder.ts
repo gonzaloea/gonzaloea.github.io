@@ -11,13 +11,13 @@ export class ExperienceBuilder {
         this._projects = [];
     }
 
-    public withJob(company: string, since: Date) {
-        this._jobs.push(Job.with(company, since));
+    public withJob(company: string, title: string, description:string, since: Date) {
+        this._jobs.push(Job.with(company, title, description, since));
         return this;
     }
 
-    public withFinishedJob(company: string, since: Date, to: Date) {
-        this._jobs.push(FinishedJob.finishedWith(company, since, to));
+    public withFinishedJob(company: string, title: string, description: string, since: Date, to: Date) {
+        this._jobs.push(FinishedJob.finishedWith(company, title, description, since, to));
         return this;
     }
 

@@ -1,13 +1,30 @@
 
 <div class = "container">
     <div class = "details-column">
-        details
+        <div class="section">
+          <h5>CONTACTO</h5>
+          <div class="email">{{professional.email}}</div>
+
+        </div>
     </div>
-
     <div class = "main-column">
+        <h2>{{ professional.name }} {{ professional.surname }}</h2>
+        <h1>{{ professional.title }} </h1>
 
-        <h1> Professional Name </h1>
+        <p class="description">{{ professional.description }}</p>
+
+        <div class="section">
+          <h4>EXPERIENCE</h4>
+          <div class="job" *ngFor="let job of professional.jobs">
+            <div class="job-header">
+              <h5>{{job.title}} @ {{job.company}}</h5>
+              <div class="job-duration">
+                <h6>{{ job.since | date: "MMM. yyyy"  }} - {{ job.to | date: "MMM. yyyy" }} ({{durationFormat(job.duration)}})</h6>
+              </div>
+            </div>
+            <p class="job-description">{{job.description}}</p>
+          </div>
+
+        </div>
     </div>
 </div>
-
-
