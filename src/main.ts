@@ -8,7 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-//let analyticsId = environment.analyticsId;
+let analyticsId = environment.analyticsId;
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

@@ -37,6 +37,13 @@ export class Course {
     }
 }
 
+export class NoCourse extends Course {
+    constructor(){
+        super("", "", new Date())
+    }
+}
+
+
 export class FinishedCourse extends Course{
     to: Date;
     duration: TimeInterval;

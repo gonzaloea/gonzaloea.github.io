@@ -1,5 +1,5 @@
 import { ContactInformation } from "./contact-information";
-import { Education } from "./education";
+import { Course, Education } from "./education";
 import { Experience } from "./experience";
 import { Job } from "./job";
 import { Project } from "./project";
@@ -36,7 +36,7 @@ export class Professional {
     }
 
     public get highSchool(): Course {
-        return this._education.
+        return this._education.highSchool;
     }
 
     public get email(): string {

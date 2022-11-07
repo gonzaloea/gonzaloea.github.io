@@ -22,8 +22,8 @@ export class FinishedJob extends Job{
     private _to: Date;
     private duration: TimeInterval;
 
-    static with(company: string, since: Date, to: Date) {
-        return new this(company, since, to);
+    static finishedWith(company: string, since: Date, to: Date) {
+        return new this(company, since, to) as Job;
     }
 
     static  assertToAfterFrom(from: Date, to: Date) {

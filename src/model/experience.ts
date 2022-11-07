@@ -19,14 +19,4 @@ export class Experience {
     public get projects() : Project[]{
         return this._projects;
     } 
-
-    public static builder(): ModelBuilder<Experience> {
-        return new class extends ModelBuilder<Experience> {
-
-            public build(): Experience {
-                throw new Error("Method not implemented.");
-            }
-
-        }
-    }
 }

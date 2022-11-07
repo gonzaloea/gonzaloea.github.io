@@ -8,6 +8,24 @@ nav{
         list-style: none;
         display: flex;
 
+        .download {
+            border-radius: 14px;
+            border:0;
+            background-color: #3282e6;
+            box-shadow: 10px 4px 5px #eeeeee;
+            -webkit-box-shadow: 10px 4px 5px #eeeeee;
+            -moz-box-shadow: 10px 4px 5px #eeeeee;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 0 15px;
+            cursor:pointer;
+
+            &:hover{
+                background-color: #4395fa;
+            }
+        }
+
+
         li{
             margin-left: 40px;
             font-weight: bold;
@@ -43,3 +61,4 @@ nav{
     }
 
 }
+
