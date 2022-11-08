@@ -1,23 +1,12 @@
-.container {
+.page {
+  height:842px;
+  width:595px;
+
+  &.first {
     display: grid;
     grid-template-columns: 1fr 3fr;
 
-    height:842px;
-    width:595px;
-
-    h1 {
-      font-size: 20px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 20px;
-    }
-
-    h4 {
+    h1, h2, h3,  h4 {
       font-size: 20px;
     }
 
@@ -32,30 +21,70 @@
       font-weight: 300;
     }
 
-    .section {
-      margin-bottom: 20px;
-    }
-
     .details-column{
         background-color: #3967ad;
-        height: 100%;
+        height: auto;
         padding: 25px;
         color: #ffffff;
 
+        .section {
+          margin-bottom: 50px;
+        }
+
         h1, h2, h3, h4, h5, h6 {
+          margin-bottom: 20px;
           color: #ffffff;
         }
 
-        .email {
-          font-size: 10px;
+        .photo {
+          border-radius: 100%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          width: 200px;
+
+          img {
+            width: 200px;
+          }
         }
 
+        .contact-item {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 10px;
+
+          img {
+            width: 15px;
+            margin-right: 9px;
+          }
+        }
+
+        .skill-item {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 10px;
+
+          img {
+            width: 11px;
+            margin-right: 9px;
+            margin-bottom: 2px;
+          }
+        }
     }
 
     .main-column {
         background-color: white;
-        height: 100%;
+        height: auto;
         padding: 25px;
+
+        .section {
+          margin-bottom: 20px;
+        }
+
         .description {
           font-size: 11px;
         }
@@ -84,9 +113,27 @@
             margin: 3px 0;
             font-size: 9px;
           }
+
+          .skills {
+            list-style-type: none;
+            display: flex;
+            font-size: 8px;
+            color:#4a4a4b;
+            padding:0;
+            margin: 0;
+
+            .skill{
+              font-weight: 600;
+              margin-right: 5px;
+            }
+          }
         }
 
 
     }
+  }
 
+  &.second {
+    padding: 25px;
+  }
 }

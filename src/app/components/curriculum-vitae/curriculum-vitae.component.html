@@ -1,30 +1,75 @@
-
-<div class = "container">
-    <div class = "details-column">
-        <div class="section">
-          <h5>CONTACTO</h5>
-          <div class="email">{{professional.email}}</div>
-
-        </div>
+<div style="display:none;" class="first page">
+  <div class="details-column">
+    <div class="section photo">
+      <img src="/assets/img/me.jpeg" />
     </div>
-    <div class = "main-column">
-        <h2>{{ professional.name }} {{ professional.surname }}</h2>
-        <h1>{{ professional.title }} </h1>
+    <div class="section">
+      <h5>CONTACT</h5>
+      <div class="contact-item">
+        <img src="/assets/icons/mail.svg" />
+        {{ professional.email }}
+      </div>
+      <div class="contact-item">
+        <img src="/assets/icons/linkedin.svg" />
+        {{ professional.linkedIn }}
+      </div>
+      <div class="contact-item">
+        <img src="/assets/icons/github.svg" />
+        {{ professional.portfolio }}
+      </div>
+    </div>
+    <div class="section">
+      <h5>SKILLS</h5>
+      <div *ngFor="let softSkill of professional.softSkills" class="skill-item">
+        <img src="/assets/icons/player-play.svg" />{{softSkill}}
+      </div>
+    </div>
+  </div>
+  <div class="main-column">
+    <h2>{{ professional.name }} {{ professional.surname }}</h2>
+    <h1>{{ professional.title }}</h1>
 
-        <p class="description">{{ professional.description }}</p>
+    <p class="description">{{ professional.description }}</p>
 
-        <div class="section">
-          <h4>EXPERIENCE</h4>
-          <div class="job" *ngFor="let job of professional.jobs">
-            <div class="job-header">
-              <h5>{{job.title}} @ {{job.company}}</h5>
-              <div class="job-duration">
-                <h6>{{ job.since | date: "MMM. yyyy"  }} - {{ job.to | date: "MMM. yyyy" }} ({{durationFormat(job.duration)}})</h6>
-              </div>
-            </div>
-            <p class="job-description">{{job.description}}</p>
+    <div class="section">
+      <h4>EXPERIENCE</h4>
+      <div class="job" *ngFor="let job of professional.jobs">
+        <div class="job-header">
+          <h5>{{ job.title }} @ {{ job.company }}</h5>
+          <div class="job-duration">
+            <h6>
+              {{ job.since | date: "MMM. yyyy" }} -
+              {{ job.to | date: "MMM. yyyy" }} ({{
+                durationFormat(job.duration)
+              }})
+            </h6>
           </div>
-
         </div>
+        <p class="job-description">{{ job.description }}</p>
+        <ul class="skills">
+          <li class="skill" *ngFor="let skill of job.skills">{{ skill }}</li>
+        </ul>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="second page">
+  <div class="section">
+    <h3>EDUCATION</h3>
+    <div class="job" *ngFor="let certification of professional.certifications">
+      {{ certification }}
+    </div>
+    <div class="degree">
+      {{ professional.degree.title }} | {{ professional.degree.institution }}
+      {{ professional.degree.since | date: "MMM. yyyy" }}
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>PROJECTS</h3>
+    <div class="job" *ngFor="let project of professional.projects">
+      {{ project }}
+    </div>
+  </div>
 </div>

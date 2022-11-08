@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TimeDifference, TimeInterval } from 'src/model/date/time-interval';
+import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { from, map, mergeMap, Observable } from 'rxjs';
+import { TimeInterval } from 'src/model/date/time-interval';
 import { Professional } from 'src/model/professional';
 import { ProfessionalBuilder } from 'src/model/professional-builder';
 
@@ -18,12 +19,14 @@ export class CurriculumVitaeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.professional);
   }
-
 
   durationFormat(duration: TimeInterval): string{
     if(duration.yearsDifference() > 0) return `${duration.yearsDifference() } yrs ${duration.monthsDifference()} mos`;
     return `${duration.monthsDifference()} mos`;
+  }
+
+  public getPage(index: number) {
+
   }
 }

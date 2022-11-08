@@ -4,16 +4,18 @@ export class Job {
     private _description: string;
     private _title: string;
     private _company: string;
+    private _skills: string[];
 
-    static with(company: string, title: string, description: string, since: Date) {
-        return new this(company, title, description, since);
+    static with(company: string, title: string, description: string, since: Date, skills: string[]) {
+        return new this(company, title, description, since, skills);
     }
 
-    constructor(company: string, title: string, description: string, since: Date) {
+    constructor(company: string, title: string, description: string, since: Date, skills: string[]) {
         this._company = company;
         this._description = description;
         this._since = since;
         this._title = title;
+        this._skills = skills;
     }
 
     public get company(): string {
@@ -36,6 +38,10 @@ export class Job {
       return new Date();
     }
 
+    public get skills(): string[]{
+      return this._skills;
+    }
+
     public yearsWorked() {
         return TimeInterval.between(this._since, new Date()).yearsDifference();
     }
@@ -54,16 +60,16 @@ export class FinishedJob extends Job{
     private _to: Date;
     private _duration: TimeInterval;
 
-    static finishedWith(company: string, title: string, description: string, since: Date, to: Date) {
-        return new this(company, title, description, since, to);
+    static finishedWith(company: string, title: string, description: string, since: Date, to: Date, skills: string[]) {
+        return new this(company, title, description, since, to, skills);
     }
 
     static  assertToAfterFrom(from: Date, to: Date) {
         if (from > to) throw new Error(FinishedJob.ERROR_INVALID_INTERVAL);
     }
 
-    constructor(company: string, title: string, description: string, since: Date, to: Date){
-        super(company, title, description, since);
+    constructor(company: string, title: string, description: string, since: Date, to: Date, skills: string[]){
+        super(company, title, description, since, skills);
         this._to = to;
         this._duration = TimeInterval.between(this._since, this._to);
     }

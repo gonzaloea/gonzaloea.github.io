@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { CurriculumVitaeComponent } from './components/curriculum-vitae/curriculum-vitae.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
