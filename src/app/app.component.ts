@@ -43,26 +43,28 @@ export class AppComponent {
     let component = this.newProfessionalCurriculumVitaeComponent();
     var pdf = new jsPDF('p', 'px',[595, 842]);
 
-    let pages = component.location.nativeElement.getElementsByClassName('page');
-    for(let i = 0; i < pages.length ; i++) {
-      let canvas = await html2canvas(pages.item(i), {
-        useCORS: true,
-        logging:true,
-        allowTaint: false,
-        windowWidth: 595,
-        windowHeight: 842,
-        scale: 3,
-      });
+    setTimeout(async () => {
+      let pages = component.location.nativeElement.getElementsByClassName('page');
+      for(let i = 0; i < pages.length ; i++) {
+        let canvas = await html2canvas(pages.item(i), {
+          useCORS: true,
+          logging:true,
+          allowTaint: false,
+          windowWidth: 595,
+          windowHeight: 842,
+          scale: 3,
+        });
 
-      var imgData  = canvas.toDataURL("image/jpeg", 1.0);
-      pdf.addImage(imgData, 0, 0, 595, 842);
-      pdf.addPage();
-    }
+        var imgData  = canvas.toDataURL("image/jpeg", 1.0);
+        pdf.addImage(imgData, 0, 0, 595, 842);
+        pdf.addPage();
+      }
 
-    pdf.deletePage(pages.length+1);
+      pdf.deletePage(pages.length+1);
 
-    pdf.save('CV - Gonzalo Alvarez.pdf');
-    component.destroy();
+      pdf.save('CV - Gonzalo Alvarez.pdf');
+      component.destroy();
+    }, 500)
   }
 
   newProfessionalCurriculumVitaeComponent() :ComponentRef<CurriculumVitaeComponent> {
