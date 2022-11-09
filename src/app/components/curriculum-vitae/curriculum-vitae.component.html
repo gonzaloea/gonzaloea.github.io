@@ -1,4 +1,4 @@
-<div style="display:none;" class="first page">
+<div class="first page">
   <div class="details-column">
     <div class="section photo">
       <img src="/assets/img/me.jpeg" />
@@ -57,19 +57,31 @@
 <div class="second page">
   <div class="section">
     <h3>EDUCATION</h3>
-    <div class="job" *ngFor="let certification of professional.certifications">
+    <div class="certification" *ngFor="let certification of professional.certifications">
       {{ certification }}
     </div>
     <div class="degree">
-      {{ professional.degree.title }} | {{ professional.degree.institution }}
-      {{ professional.degree.since | date: "MMM. yyyy" }}
+      <h5>{{ professional.degree.title }} @ {{ professional.degree.institution }}</h5>
+      <div class="degree-duration">
+        <h6>
+          {{ professional.degree.since | date: "MMM. yyyy" }} - now
+        </h6>
+      </div>
+
     </div>
+
   </div>
 
   <div class="section">
     <h3>PROJECTS</h3>
-    <div class="job" *ngFor="let project of professional.projects">
-      {{ project }}
+    <div class="project" *ngFor="let project of professional.projects">
+      <h5>{{ project.name }}</h5>
+      <p class="project-description">{{ project.description }}</p>
+
+      <div class="url-container">
+        <img src="/assets/icons/github-grey.svg" />
+        <a class="url">{{project.url}}</a>
+      </div>
     </div>
   </div>
 </div>

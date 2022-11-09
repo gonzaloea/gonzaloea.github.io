@@ -21,8 +21,8 @@ export class ExperienceBuilder {
         return this;
     }
 
-    public withCreatedProject(name: string, ...technologies: string[]) {
-        this._projects.push(new Project(name, technologies));
+    public withCreatedProject(name: string, description: string, url: string, ...technologies: string[]) {
+        this._projects.push(new Project(name, description, url, technologies));
         return this;
     }
 

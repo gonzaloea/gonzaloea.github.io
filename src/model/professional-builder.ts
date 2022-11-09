@@ -90,8 +90,8 @@ export class ProfessionalBuilder extends ModelBuilder<Professional> {
     return this;
   }
 
-  public thatCreatedAProject(name: string, ...technologies: string[]) {
-    this.experienceBuilder.withCreatedProject(name, ...technologies);
+  public thatCreatedAProject(name: string, description: string, url: string, ...technologies: string[]) {
+    this.experienceBuilder.withCreatedProject(name, description, url,...technologies);
     return this;
   }
 
