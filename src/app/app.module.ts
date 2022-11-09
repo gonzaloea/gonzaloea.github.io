@@ -8,6 +8,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { CurriculumVitaeComponent } from './components/curriculum-vitae/curriculum-vitae.component';
 import { HttpClientModule } from "@angular/common/http";
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
