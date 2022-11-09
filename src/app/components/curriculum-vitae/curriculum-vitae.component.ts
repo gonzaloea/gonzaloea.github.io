@@ -22,7 +22,13 @@ export class CurriculumVitaeComponent implements OnInit {
   }
 
   durationFormat(duration: TimeInterval): string{
-    if(duration.yearsDifference() > 0) return `${duration.yearsDifference() } yrs ${duration.monthsDifference()} mos`;
+    if(duration.yearsDifference() > 0) {
+      if(duration.monthsDifference() > 0 ) {
+        return `${duration.yearsDifference() } yrs ${duration.monthsDifference()} mos`;
+      }
+
+      return `${duration.yearsDifference() } yrs`;
+    }
     return `${duration.monthsDifference()} mos`;
   }
 

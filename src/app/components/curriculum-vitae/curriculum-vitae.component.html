@@ -5,6 +5,10 @@
     </div>
     <div class="section">
       <h5>CONTACT</h5>
+      <div *ngIf="professional.phoneNumber" class="contact-item">
+        <img src="/assets/icons/call-phone.svg" />
+        {{ professional.phoneNumber }}
+      </div>
       <div class="contact-item">
         <img src="/assets/icons/mail.svg" />
         {{ professional.email }}
@@ -38,8 +42,8 @@
           <h5>{{ job.title }} @ {{ job.company }}</h5>
           <div class="job-duration">
             <h6>
-              {{ job.since | date: "MMM. yyyy" }} -
-              {{ job.to | date: "MMM. yyyy" }} ({{
+              {{ job.since | communicativeDate: "MMM. yyyy" }} -
+              {{ job.to | communicativeDate: "MMM. yyyy" }} ({{
                 durationFormat(job.duration)
               }})
             </h6>
@@ -56,23 +60,23 @@
 
 <div class="second page">
   <div class="section">
-    <h3>EDUCATION</h3>
-    <div class="certification" *ngFor="let certification of professional.certifications">
-      {{ certification }}
-    </div>
+    <h3>EDUCACIÓN</h3>
     <div class="degree">
       <h5>{{ professional.degree.title }} @ {{ professional.degree.institution }}</h5>
       <div class="degree-duration">
         <h6>
-          {{ professional.degree.since | date: "MMM. yyyy" }} - now
+          {{ professional.degree.since | communicativeDate: "MMM. yyyy" }} - now
         </h6>
       </div>
+    </div>
+
+    <div class="certification" *ngFor="let certification of professional.certifications">
 
     </div>
 
   </div>
 
-  <div class="section">
+  <div *ngIf="professional.projects.length > 0  " class="section">
     <h3>PROJECTS</h3>
     <div class="project" *ngFor="let project of professional.projects">
       <h5>{{ project.name }}</h5>

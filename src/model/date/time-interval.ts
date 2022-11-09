@@ -59,9 +59,9 @@ export class TimeDifference {
 
     constructor(from: Date, to: Date) {
         let yearFrom = Year.at(from.getFullYear());
-        let monthFrom = yearFrom.monthByNumber(from.getMonth());
+        let monthFrom = yearFrom.monthByNumber(from.getMonth()+1);
         let yearTo = Year.at(to.getFullYear());
-        let monthTo = yearTo.monthByNumber(to.getMonth());
+        let monthTo = yearTo.monthByNumber(to.getMonth()+1);
         this.seconds = SecondsDifference.between(from.getSeconds(), to.getSeconds());
         this.minutes = MinutesDifference.betweenWithSecondsDifference(from.getMinutes(), to.getMinutes(), this.seconds);
         this.hours = HoursDifference.betweenWithMinutesDifference(from.getHours(), to.getHours(), this.minutes);

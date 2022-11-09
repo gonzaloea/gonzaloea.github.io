@@ -1,5 +1,6 @@
 import { ModelBuilder } from './builder/model-builder';
 import { ContactInformationBuilder } from './contact-information-builder';
+import { Year } from './date/year';
 import { EducationBuilder } from './education-builder';
 import { ExperienceBuilder } from './experience-builder';
 import { Professional } from './professional';
@@ -106,6 +107,17 @@ export class ProfessionalBuilder extends ModelBuilder<Professional> {
       title,
       since,
       to
+    );
+    return this;
+  }
+
+  public thatIsCertified(
+    title: string,
+    year: number
+  ) {
+    this.educationBuilder.withACertification(
+      title,
+      Year.at(year)
     );
     return this;
   }

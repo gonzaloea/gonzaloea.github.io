@@ -1,6 +1,5 @@
 import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 import { CurriculumVitaeComponent } from './components/curriculum-vitae/curriculum-vitae.component';
-import domtoimage from 'dom-to-image';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Professional } from 'src/model/professional';
@@ -24,18 +23,19 @@ export class AppComponent {
       .thatShowHisWorkIn("github.com/gonzaloea")
       .thatCanBeContactedViaEmail("gonzalo.e.alvarez@hotmail.com")
       .thatCanBeContactedViaLinkedIn("linkedin.com/in/gonzaloea")
-      .thatIsWorkingIn('Uala\u0301', 'Backend Developer', 'Currently working in the development of a totally new platform for the loans product of the company.', new Date(2022,6,2), ["AWS Serverless", "Terraform", "Java"])
-      .thatWorkedIn('Vantek', 'Technical Lead', 'I was responsible for the coaching of the developers that were in the learning proccess in the company. A big number of the developers were just starting in the IT environment so I had to work as a coach and teach them about software development.', new Date(2021,6,1), new Date(2022,6,1), ["Angular", "Coaching", "Leading", "Ionic", "Java"])
-      .thatWorkedIn('Vantek', 'FullStack Engineer', 'I was responsible for the development and maintenance of different products of the company.', new Date(2019,7,1), new Date(2021,6,1), ["Bash", "Ionic", "Java", "Spring", "Angular", "PostgreSQL"])
-      .thatWorkedIn('Keepcon', 'FullStack Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date(2017,11,1), new Date(2019,7,1), ["Ruby on Rails", "Vue.js", "Ruby", "PostgreSQL"])
-      .thatWorkedIn('Codementor', 'Software Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date(2018,6,1), new Date(2018,10,1), ["Ruby", "Ruby on Rails", "Algorith Design", "Python", "Java", "SQL"])
-      .thatWorkedIn('Lumina Americas', 'Software Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date(2014,2,1), new Date(2017,11,1), ["Java", "Spring", "Swing", "Oracle PL/SQL"])
+      .thatIsWorkingIn('Uala\u0301', 'Backend Developer', 'Currently working in the development of a totally new platform for the loans product of the company.', new Date("2022-6-2"), ["AWS Serverless", "Terraform", "Java"])
+      .thatWorkedIn('Vantek', 'Technical Lead', 'I was responsible for the coaching of the developers that were in the learning proccess in the company. A big number of the developers were just starting in the IT environment so I had to work as a coach and teach them about software development.', new Date("2021-6-1"), new Date("2022-6-1"), ["Angular", "Coaching", "Leading", "Ionic", "Java"])
+      .thatWorkedIn('Vantek', 'FullStack Engineer', 'I was responsible for the development and maintenance of different products of the company.', new Date("2019-7-1"), new Date("2021-6-1"), ["Bash", "Ionic", "Java", "Spring", "Angular", "PostgreSQL"])
+      .thatWorkedIn('Keepcon', 'FullStack Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date("2017-11-1"), new Date("2019-7-1"), ["Ruby on Rails", "Vue.js", "Ruby", "PostgreSQL"])
+      .thatWorkedIn('Codementor', 'Software Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date("2018-6-1"), new Date("2018-10-1"), ["Ruby", "Ruby on Rails", "Algorith Design", "Python", "Java", "SQL"])
+      .thatWorkedIn('Lumina Americas', 'Software Developer', 'I was responsible for the development and maintenance of different products of the company.', new Date("2014-2-1"), new Date("2017-11-1"), ["Java", "Spring", "Swing", "Oracle PL/SQL"])
       .thatCreatedAProject('Ophrys', 'Cryptocurrency trading automation. Designed mainly to be adapted to any market. The main motivation was to explore Golang.', 'github.com/gonzaloea/ophrys', 'Golang')
       .thatCreatedAProject('Ophrys GUI', 'Ophrys graphical user interface. The main motivation was to explore new versions of Vue.js.', 'github.com/gonzaloea/ophrys-gui', 'Vue.js')
-      .thatIsAttendingToUniversity('Universidad de Buenos Aires', 'Software Engineering', new Date(2015, 3, 17))
+      .thatIsAttendingToUniversity('Universidad de Buenos Aires', 'Software Engineering', new Date("2015-3-17"))
       .withSoftSkill("Autonomy")
       .withSoftSkill("Fast learning")
       .withSoftSkill("Problem solving")
+      .withSoftSkill("Team Player")
     .build();
   }
 
@@ -52,7 +52,7 @@ export class AppComponent {
           allowTaint: false,
           windowWidth: 595,
           windowHeight: 842,
-          scale: 3,
+          scale: 4,
         });
 
         var imgData  = canvas.toDataURL("image/jpeg", 1.0);
