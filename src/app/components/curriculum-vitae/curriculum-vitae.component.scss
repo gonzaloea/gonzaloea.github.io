@@ -91,6 +91,10 @@
           font-size: 11px;
         }
 
+        h4{
+          margin:10px 0;
+        }
+
         .job {
           margin-top: 15px;
 
@@ -136,7 +140,8 @@
   }
 
   &.second {
-    padding: 40px 60px;
+    width:475px;
+    padding: 40px 60px 0 60px;
 
     h5,h6 {
       padding: 0;
