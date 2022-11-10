@@ -32,7 +32,4 @@ export class CurriculumVitaeComponent implements OnInit {
     return `${duration.monthsDifference()} mos`;
   }
 
-  public getPage(index: number) {
-
-  }
 }

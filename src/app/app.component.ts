@@ -4,6 +4,8 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Professional } from 'src/model/professional';
 import { ProfessionalBuilder } from 'src/model/professional-builder';
+import { A4Pdf } from 'src/model/a4-pdf';
+import { CurriculumVitaeService } from './services/curriculum-vitae.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent {
 
   me: Professional;
 
-  constructor(private viewContainerRef: ViewContainerRef) {
+  constructor(private viewContainerRef: ViewContainerRef, private curriculumVitaeService: CurriculumVitaeService) {
     this.me = ProfessionalBuilder
       .newProfessionalToBuild()
       .withCompleteName("Gonzalo", "Alvarez")
@@ -41,37 +43,6 @@ export class AppComponent {
   }
 
   async downloadCurriculumVitae() {
-    let component = this.newProfessionalCurriculumVitaeComponent();
-    var pdf = new jsPDF('p', 'px',[595, 842]);
-
-    setTimeout(async () => {
-      let pages = component.location.nativeElement.getElementsByClassName('page');
-      for(let i = 0; i < pages.length ; i++) {
-        let canvas = await html2canvas(pages.item(i), {
-          useCORS: true,
-          logging:true,
-          allowTaint: false,
-          windowWidth: 595,
-          windowHeight: 842,
-          scale: 4,
-        });
-
-        var imgData  = canvas.toDataURL("image/jpeg", 1.0);
-        pdf.addImage(imgData, 0, 0, 595, 842);
-        pdf.addPage();
-      }
-
-      pdf.deletePage(pages.length+1);
-
-      pdf.save('CV - Gonzalo Alvarez.pdf');
-      component.destroy();
-    }, 500)
-  }
-
-  newProfessionalCurriculumVitaeComponent() :ComponentRef<CurriculumVitaeComponent> {
-    let component = this.viewContainerRef.createComponent<CurriculumVitaeComponent>(CurriculumVitaeComponent);
-    component.instance.professional = this.me;
-    component.changeDetectorRef.detectChanges();
-    return component;
+    this.curriculumVitaeService.download(this.viewContainerRef, this.me);
   }
 }
