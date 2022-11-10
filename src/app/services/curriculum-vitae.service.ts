@@ -21,7 +21,7 @@ export class CurriculumVitaeService {
       a4Pdf.download();
 
       component.destroy();
-    }, 50);
+    }, 200);
   }
 
   private newProfessionalCurriculumVitaeComponent(viewContainerRef: ViewContainerRef, professional: Professional) : ComponentRef<CurriculumVitaeComponent> {
