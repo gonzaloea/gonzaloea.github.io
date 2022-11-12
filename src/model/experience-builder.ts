@@ -1,6 +1,8 @@
 import { Experience } from "./experience";
 import { FinishedJob, Job } from "./job";
+import { FinishedJobBuilder, JobBuilder } from "./job-builder";
 import { Project } from "./project";
+import { ProjectBuilder } from "./project-builder";
 
 export class ExperienceBuilder {
     private _jobs: Job[];
@@ -11,18 +13,22 @@ export class ExperienceBuilder {
         this._projects = [];
     }
 
-    public withJob(company: string, title: string, description:string, since: Date, skills: string[]) {
-        this._jobs.push(Job.with(company, title, description, since, skills));
-        return this;
+
+    public withJob(jobConstruction: (jobBuilder : JobBuilder) => JobBuilder) {
+      let job = jobConstruction(new JobBuilder()).build();
+      this._jobs.push(job);
+      return this;
     }
 
-    public withFinishedJob(company: string, title: string, description: string, since: Date, to: Date, skills: string[]) {
-        this._jobs.push(FinishedJob.finishedWith(company, title, description, since, to, skills));
-        return this;
+    public withFinishedJob(finishedJobConstruction: (finishedJobBuilder : FinishedJobBuilder) => FinishedJobBuilder) {
+      let finishedJob = finishedJobConstruction(new FinishedJobBuilder()).build();
+      this._jobs.push(finishedJob);
+      return this;
     }
 
-    public withCreatedProject(name: string, description: string, url: string, ...technologies: string[]) {
-        this._projects.push(new Project(name, description, url, technologies));
+    public withCreatedProject(projectConstruction : (projectBuilder: ProjectBuilder) => ProjectBuilder) {
+        let project =projectConstruction(new ProjectBuilder()).build();
+        this._projects.push(project);
         return this;
     }
 

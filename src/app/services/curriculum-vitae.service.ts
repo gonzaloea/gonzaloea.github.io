@@ -1,5 +1,5 @@
 import { ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
-import { A4Pdf } from 'src/model/a4-pdf';
+import { A4PdfBuilder } from 'src/model/a4-pdf';
 import { Professional } from 'src/model/professional';
 import { CurriculumVitaeComponent } from '../components/curriculum-vitae/curriculum-vitae.component';
 
@@ -16,7 +16,7 @@ export class CurriculumVitaeService {
     setTimeout(async () => {
       let pages = component.location.nativeElement.getElementsByClassName('page');
 
-      let a4Pdf = new A4Pdf('CV - Gonzalo Alvarez.pdf');
+      let a4Pdf = new A4PdfBuilder('CV - Gonzalo Alvarez.pdf');
       await a4Pdf.withPages([...pages]);
       a4Pdf.download();
 

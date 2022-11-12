@@ -2,7 +2,7 @@ export class Project {
 
     private _name: string;
     private _description: string;
-    private _url;
+    private _url: string;
     private _technologies: string[];
 
     constructor(name: string, description: string, url: string, technologies: string[]){

@@ -3,7 +3,9 @@ import { ContactInformationBuilder } from './contact-information-builder';
 import { Year } from './date/year';
 import { EducationBuilder } from './education-builder';
 import { ExperienceBuilder } from './experience-builder';
+import { FinishedJobBuilder, JobBuilder } from './job-builder';
 import { Professional } from './professional';
+import { ProjectBuilder } from './project-builder';
 
 export class ProfessionalBuilder extends ModelBuilder<Professional> {
   private readonly EMPTY_STRING: string = '';
@@ -61,38 +63,20 @@ export class ProfessionalBuilder extends ModelBuilder<Professional> {
     return this;
   }
 
-  public thatWorkedIn(
-    company: string,
-    title: string,
-    description: string,
-    since: Date,
-    to: Date,
-    skills: string[]
-  ) {
-    this.experienceBuilder.withFinishedJob(
-      company,
-      title,
-      description,
-      since,
-      to,
-      skills
-    );
+
+  public thatWorkedIn(finishedJobConstruction : (jobBuilder: FinishedJobBuilder) => FinishedJobBuilder){
+    this.experienceBuilder.withFinishedJob(finishedJobConstruction);
     return this;
   }
 
-  public thatIsWorkingIn(
-    company: string,
-    title: string,
-    description: string,
-    since: Date,
-    skills: string[]
-  ) {
-    this.experienceBuilder.withJob(company, title, description, since, skills);
+
+  public thatIsWorkingIn(jobConstruction : (jobBuilder: JobBuilder) => JobBuilder){
+    this.experienceBuilder.withJob(jobConstruction);
     return this;
   }
 
-  public thatCreatedAProject(name: string, description: string, url: string, ...technologies: string[]) {
-    this.experienceBuilder.withCreatedProject(name, description, url,...technologies);
+  public thatCreatedAProject(projectConstruction: (projectBuilder: ProjectBuilder) => ProjectBuilder) {
+    this.experienceBuilder.withCreatedProject(projectConstruction);
     return this;
   }
 

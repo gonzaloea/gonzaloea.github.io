@@ -2,7 +2,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 
-export class A4Pdf {
+export class A4PdfBuilder {
   private readonly A4_HEIGHT_PX : number = 842;
   private readonly A4_WIDTH_PX : number = 595;
   private readonly MEASUREMENT_UNIT_PX : "px" = 'px';
