@@ -1,5 +1,5 @@
 import { ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
-import { A4PdfBuilder } from 'src/model/a4-pdf';
+import { A4PdfBuilder } from 'src/model/a4-pdf-builder';
 import { Professional } from 'src/model/professional';
 import { CurriculumVitaeComponent } from '../components/curriculum-vitae/curriculum-vitae.component';
 
