@@ -3,18 +3,15 @@ const puppeteer = require('puppeteer');
 
 const PORT = 3000;
 
+let browser;
+puppeteer.launch({
+    headless: true
+}).then(b => browser = b);
+
 const server = express();
 server  
-  .disable('x-powered-by')
   .get('/convert', async (req, res) => {
-    
-    try {
-        const browser = await puppeteer.launch({
-          headless: false
-        });
-
-        console.log(req.query);
-        
+    try {        
         const page = await browser.newPage();
         await page.goto(req.query.url,{
           waitUntil: ["domcontentloaded", 'networkidle0']
@@ -33,20 +30,14 @@ server
           },
         });
 
-        //browser.close();
-    
-
-          //res.status(200).send(html);
-          res.writeHead(200, {
-            'Content-Type': 'application/pdf',
-            'Content-disposition': 'attachment;filename=CV_Gonzalo_Alvarez.pdf',
-            'Content-Length': pdfBuffer.length
-          });
-          console.log(pdfBuffer.length)
-          res.end(Buffer.from(pdfBuffer, 'binary'));
+        res.writeHead(200, {
+        'Content-Type': 'application/pdf',
+        'Content-disposition': 'attachment;filename=CV_Gonzalo_Alvarez.pdf',
+        'Content-Length': pdfBuffer.length
+        });
+        console.log(pdfBuffer.length)
+        res.end(Buffer.from(pdfBuffer, 'binary'));
         
-
-       
     } catch (err) {
         console.error(err)
     }
