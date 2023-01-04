@@ -11,5 +11,5 @@
           "dest": "server.js"
         }
     ],
-    "installCommand": "npm install && cd node_modules/puppeteer && npm run postinstall"
+    "installCommand": "npm run install && cd node_modules/puppeteer && npm run postinstall && echo \"Custom install done\""
   }
