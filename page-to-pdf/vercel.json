@@ -4,11 +4,12 @@
             "src": "server.js",
             "use": "@vercel/node"
         }
-    ],
+    ], 
     "routes": [
         {
           "src": "/(.*)",
           "dest": "server.js"
         }
-    ]
+    ],
+    "installCommand": "npm install && cd node_modules/puppeteer && npm run postinstall"
   }
