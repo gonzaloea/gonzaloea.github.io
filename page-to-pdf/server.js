@@ -60,3 +60,6 @@ server
     }
     console.log(`> Started on port ${PORT}`);
   });
+
+
+  module.exports = server
