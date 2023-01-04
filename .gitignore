@@ -5,7 +5,9 @@
 /out-tsc
 /bazel-out
 
+
 # Node
+/page-to-pdf/node_modules
 /node_modules
 npm-debug.log
 yarn-error.log
