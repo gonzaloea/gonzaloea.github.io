@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlSegment } from '@angular/router';
 import { CurriculumVitaeComponent } from './components/curriculum-vitae/curriculum-vitae.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,7 +15,7 @@ const routes: Routes = [ {
   path: 'home',
   component: HomeComponent
 },{
-  path: 'cv',
+  path:'cv',
   component: CurriculumVitaeComponent
 }, {
   path: '',
@@ -23,7 +23,15 @@ const routes: Routes = [ {
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true,
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+function isCv(url: UrlSegment[]) {
+  debugger;
+  return url.length === 1 && url[0].path.endsWith('.html') ? ({consumed: url}) : null;
+}
