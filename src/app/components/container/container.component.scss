@@ -62,3 +62,37 @@ nav{
 
 }
 
+@media screen and (max-width: 600px) {
+
+    nav{
+        top: 1%;
+        right: 3%;
+        min-width: 420px;
+        overflow: scroll;
+
+        ul {
+            justify-content: flex-end;
+            .download {
+                border-radius: 14px;
+                border:0;
+                padding: 0 15px;
+                font-size: 13px;
+    
+                &:hover{
+                    background-color: #4395fa;
+                }
+            }
+    
+    
+            li{
+                margin-left: 15px;
+                padding:1px 2px;
+                font-size: 13px;
+                
+                &.active {
+                    border-bottom: 3px solid #3282e6;
+                }
+            }
+        }
+    }
+}
