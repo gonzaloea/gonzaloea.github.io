@@ -10,7 +10,7 @@ const A4_WIDTH = 595;
 (async () => {
   console.log("Started the creation of the pdf '"+PDF_PATH+"' from the url: '"+PAGE_URL+"'.")
   const browser = await puppeteer.launch({
-    headless: false
+    headless: true
   })
 
   const page = await browser.newPage();

@@ -89,7 +89,7 @@
         }
 
         .description {
-          font-size: 11px;
+          font-size: 10px;
         }
 
         h4{
@@ -97,7 +97,7 @@
         }
 
         .job {
-          margin-top: 15px;
+          margin-top: 20px;
 
           h5,h6 {
             padding: 0;
@@ -105,20 +105,24 @@
           }
 
           .job-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
             h5{
-              font-size: 10px;
+              font-size: 8px;
             }
             .job-duration {
               display:flex;
               h6{
-                font-size: 9px;
+                font-size:7px;
               }
             }
           }
 
           .job-description {
             margin: 3px 0;
-            font-size: 9px;
+            font-size: 7px;
           }
 
           .skills {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfessionalService } from 'src/app/services/professional.service';
+import { TimeInterval } from 'src/model/date/time-interval';
+import { Professional } from 'src/model/professional';
 
 @Component({
   selector: 'app-experience',
@@ -64,25 +67,25 @@ export class ExperienceComponent implements OnInit {
       technologies: ['Oracle Database', 'Java Swing', 'Java', 'Spring Framework', 'PL/SQL']
     }
   ]
+  professional: Professional;
 
-  constructor() { }
+  constructor(private professionalService: ProfessionalService) {
+    this.professional = this.professionalService.professional;
+   }
 
   ngOnInit(): void {
   }
 
-  yearsDiff(from: Date, to: Date) {
-    return Math.floor((to.getTime() - from.getTime() ) /(1000 * 60 * 60 * 24 * 364));
+
+  durationFormat(duration: TimeInterval): string{
+    if(duration.yearsDifference() > 0) {
+      if(duration.monthsDifference() > 0 ) {
+        return `${duration.yearsDifference() } yrs ${duration.monthsDifference()} mos`;
+      }
+
+      return `${duration.yearsDifference() } yrs`;
+    }
+    return `${duration.monthsDifference()} mos`;
   }
 
-  yearsDiffFromNow(from: Date) {
-    return Math.floor((new Date().getTime() - from.getTime() ) /(1000 * 60 * 60 * 24 * 364));
-  }
-
-  monthsDiff(from: Date, to: Date) {
-    return Math.floor(((to.getTime() - from.getTime() ) /(1000 * 60 * 60 * 24 * 364) % 1) * 12)
-  }
-
-  monthsDiffFromNow(from: Date) {
-    return Math.floor(((new Date().getTime() - from.getTime() ) /(1000 * 60 * 60 * 24 * 364) % 1) * 12)
-  }
 }

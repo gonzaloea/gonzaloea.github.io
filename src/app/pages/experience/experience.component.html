@@ -1,26 +1,30 @@
 <app-container>
     <div class="main">
         <div class="name">Gonzalo.</div>
-        <div class="experiences">
+        <div class="jobs">
             
-                <a class="experience" *ngFor="let experience of experiences; let i = index" style="--index: {{i}};" href="{{experience.url}}">
+                <a class="job" *ngFor="let job of professional.jobs; let i = index" style="--index: {{i}};">
                     <div class="circle"></div>
-                    <div class="logo-container">
-                        <img class="logo" src='{{experience.logo}}'>
-                    </div>
-                    <div class="experience-data">
+                    <div class="job-data">
                         <p class="title">
-                            {{experience.title}} @ {{experience.employer}}
+                            {{job.title}} @ {{job.company}}
                         </p>
                         <div class="second-line">
                             <p class="dates">
-                                {{experience.from | date: 'MMM. YYYY'}} - {{experience.to !== undefined ? (experience.to | date: 'MMM. YYYY') : 'Present'}} ({{ experience.to !== undefined ? yearsDiff(experience.from, experience.to) : yearsDiffFromNow(experience.from) }} yrs. {{ experience.to !== undefined ? monthsDiff(experience.from, experience.to) : monthsDiffFromNow(experience.from) }} mon.)
+                                {{ job.since | communicativeDate: "MMM. yyyy" }} -
+                                {{ job.to | communicativeDate: "MMM. yyyy" }} ({{
+                                  durationFormat(job.duration)
+                                }})
                             </p>
                         </div>
+
+                        <div class="description">
+                           {{ job.description }} 
+                        </div>
             
-                        <div class="technologies">
-                            <p>Technologies: </p> 
-                            <p class="technology" *ngFor="let technology of experience.technologies"> {{technology}} </p>
+                        <div class="skills">
+                            <p>Skills: </p> 
+                            <p class="skill" *ngFor="let skill of job.skills"> {{skill}} </p>
                         </div>
                     </div>
                     

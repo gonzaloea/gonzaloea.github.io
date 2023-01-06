@@ -11,7 +11,7 @@
         animation: 1s linear 0s fade;
     }
 
-    .experiences {
+    .jobs {
         position: absolute;
         top: 15%;
         bottom: 15%;
@@ -22,7 +22,7 @@
         padding-right: 5px;
         animation: 0.25s linear 0s fade;
 
-        .experience{
+        .job{
             margin-bottom: 30px;
             background: linear-gradient(90deg, rgba(212,233,255,0.1) 0%, rgba(212,233,255,1) 21%, rgba(212,233,255,1) 50%, rgba(212,233,255,1) 75%, rgba(212,233,255,0.1) 100%);
             display: flex;
@@ -51,27 +51,11 @@
             }
 
 
-            .logo-container {
-                width: 210px;
-                height: 210px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 20px 135px 20px 60px;
-
-                .logo {
-                    display: block;
-                    width: auto;
-                    max-width:230px;
-                    max-height:190px;
-                    height: auto;
-                }
-            }
-
-            .experience-data {
+            .job-data {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
+                margin-left: 20px;
 
                 .title {
                     font-weight: 600;
@@ -96,8 +80,13 @@
                         }
                     }
                 }
-    
-                .technologies {
+
+                .description {
+                    margin: 20px 40px 20px 0;
+                    font-size: 12px;
+                }
+
+                .skills {
                     display: flex;
     
                     p {
