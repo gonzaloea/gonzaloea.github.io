@@ -1,7 +1,4 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { Professional } from 'src/model/professional';
-import { ProfessionalBuilder } from 'src/model/professional-builder';
-import { CurriculumVitaeService } from './services/curriculum-vitae.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +7,7 @@ import { CurriculumVitaeService } from './services/curriculum-vitae.service';
 })
 export class AppComponent {
 
-  constructor(private curriculumVitaeService: CurriculumVitaeService) {
+  constructor() {
     
 
   }

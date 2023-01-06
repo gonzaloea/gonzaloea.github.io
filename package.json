@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "page-to-pdf": "node ./page-to-pdf/server.js",
+    "cv-to-pdf": "node ./page-to-pdf/script.js http://gonzaloea.github.io/#/cv \"../src/assets/files/CV - Gonzalo Alvarez.pdf\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

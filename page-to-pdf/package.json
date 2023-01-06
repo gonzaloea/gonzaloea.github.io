@@ -1,10 +1,10 @@
 {
   "name": "page-to-pdf",
   "version": "1.0.0",
-  "description": "Server to convert a page to pdf",
+  "description": "Convert html to pdf",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node script.js"
   },
   "author": "Gonzalo Alvarez",
   "license": "ISC",
