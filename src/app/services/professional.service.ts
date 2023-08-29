@@ -21,6 +21,7 @@ export class ProfessionalService {
       .thatIsWorkingIn( jobBuilder => {
         return jobBuilder.forTheCompany('Branch')
                         .withTheTitle('Backend Software Engineer')
+                        .describedAs('At Branch, a mobile marketing firm, I collaborated with data scientists to integrate backend systems vital for revenue strategies. I implemented comprehensive solutions, improving performance for data-driven tasks. Furthermore, I contributed to developing tools to optimize insights for a mobile SDK, enabling precise ad displays on diverse mobile platforms.')
                         .thatWasFromDate(new Date("2023-2-21"))
                         .thatWasLocatedIn('San Francisco, CA, USA')
                         .thatNeededTheSkill('Java')
