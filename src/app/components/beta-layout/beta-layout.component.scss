@@ -1,0 +1,101 @@
+.page {
+    height:842px;
+    width:595px;
+    padding: 40px 30px;
+    overflow: hidden;
+    font-family: 'Montserrat';
+  
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+    }
+    
+    h3 {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 12px;
+        font-weight: 300;
+        font-style: italic;
+        margin: 0;
+    }
+
+    .title {
+        margin: 0 0 7px 0;
+    }
+
+    .separated {
+        border-bottom: 1px black solid;
+    }
+
+    .separator {
+        font-size: 16px;
+    }
+
+    &.first {
+        .header {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px black solid;
+
+            .personal-information {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+            margin-bottom: 7px;
+        }
+
+        .job, .degree{
+            display:flex;
+            flex-direction:column;
+            margin-bottom: 12px;
+
+            .line {
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+            }
+
+            .core-responsibilities{
+                font-size: 12px;
+                font-weight: 400;
+                margin:0;
+                padding-inline-start: 16px;
+                li {
+                    margin-bottom: 2px;
+                }
+            }
+        }
+
+        .skills {
+            display:flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+
+            h4 {
+                display: flex;
+                flex-direction:row;
+            }
+        }
+
+    }
+  
+    &.second {
+      width:475px;
+      height: 802px;
+      padding: 40px 60px 0 60px;
+  
+  }
+}

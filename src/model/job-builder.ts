@@ -1,4 +1,3 @@
-import { Title } from "@angular/platform-browser";
 import { FinishedJob, Job } from "./job";
 
 export class JobBuilder{
@@ -8,7 +7,9 @@ export class JobBuilder{
   protected _description: string;
   protected _title: string;
   protected _company: string;
+  protected _location: string;
   protected _skills: string[];
+  protected _coreResponsibilities: string[];
 
 
   constructor() {
@@ -16,7 +17,9 @@ export class JobBuilder{
     this._description = JobBuilder.EMPTY_STRING;
     this._title = JobBuilder.EMPTY_STRING;
     this._company = JobBuilder.EMPTY_STRING;
+    this._location = JobBuilder.EMPTY_STRING;
     this._skills = [];
+    this._coreResponsibilities = [];
   }
 
 
@@ -45,8 +48,18 @@ export class JobBuilder{
     return this;
   }
 
+  thatHadTheCoreResponsibility(coreResponsibility: string){
+    this._coreResponsibilities.push(coreResponsibility);
+    return this;
+  }
+
+  thatWasLocatedIn(location: string) {
+    this._location = location;
+    return this;
+  }
+
   build() : Job{
-    return Job.with(this._company, this._title, this._description, this._since, this._skills);
+    return Job.with(this._company, this._title, this._description, this._location, this._since, this._skills, this._coreResponsibilities);
   }
 }
 
@@ -64,6 +77,6 @@ export class FinishedJobBuilder extends JobBuilder {
   }
 
   override build() : Job{
-    return FinishedJob.finishedWith(this._company, this._title, this._description, this._since, this._to, this._skills);
+    return FinishedJob.finishedWith(this._company, this._title, this._description, this._location, this._since, this._to, this._skills, this._coreResponsibilities);
   }
 }

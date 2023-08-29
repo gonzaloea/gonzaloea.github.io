@@ -1,0 +1,185 @@
+.page {
+    height:842px;
+    width:595px;
+    overflow: hidden;
+  
+    h1, h2, h3,  h4 {
+      font-size: 20px;
+    }
+  
+    h5 {
+      font-size: 13px;
+      font-weight: 600;
+    }
+  
+    h6 {
+      font-size: 12px;
+      color: #6c6f74;
+      font-weight: 300;
+    }
+  
+    &.first {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+  
+  
+  
+      .details-column{
+          background-color: #3967ad;
+          height: 817px;
+          padding: 25px 25px 0 25px;
+          color: #ffffff;
+  
+          .section {
+            margin-bottom: 50px;
+          }
+  
+          h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 20px;
+            color: #ffffff;
+          }
+  
+          .photo {
+            border-radius: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 200px;
+  
+            img {
+              width: 200px;
+            }
+          }
+  
+          .contact-item {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+  
+            img {
+              width: 15px;
+              margin-right: 9px;
+            }
+          }
+  
+          .skill-item {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+  
+            img {
+              width: 11px;
+              margin-right: 9px;
+              margin-bottom: 2px;
+            }
+          }
+      }
+  
+      .main-column {
+          background-color: white;
+          height: 817px;
+          padding: 25px 25px 0 25px;
+  
+          .section {
+            margin-bottom: 20px;
+          }
+  
+          .description {
+            font-size: 10px;
+          }
+  
+          h4{
+            margin:10px 0;
+          }
+  
+          .job {
+            margin-top: 20px;
+  
+            h5,h6 {
+              padding: 0;
+              margin: 0;
+            }
+  
+            .job-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+  
+              h5{
+                font-size: 8px;
+              }
+              .job-duration {
+                display:flex;
+                h6{
+                  font-size:7px;
+                }
+              }
+            }
+  
+            .job-description {
+              margin: 3px 0;
+              font-size: 7px;
+            }
+  
+            .skills {
+              list-style-type: none;
+              display: flex;
+              font-size: 8px;
+              color:#4a4a4b;
+              padding:0;
+              margin: 0;
+  
+              .skill{
+                font-weight: 600;
+                margin-right: 5px;
+              }
+            }
+          }
+  
+  
+      }
+    }
+  
+    &.second {
+      width:475px;
+      height: 802px;
+      padding: 40px 60px 0 60px;
+  
+      h5,h6 {
+        padding: 0;
+        margin: 0;
+      }
+  
+      .project{
+        margin-bottom: 35px;
+  
+        h5{
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        .project-description {
+          margin: 3px 0;
+          font-size: 12px;
+        }
+  
+        .url-container {
+          margin-top:10px;
+          display:flex;
+          img {
+            width: 16px;
+            margin-right: 6px;
+            margin-top: 1px;
+          }
+          .url {
+            font-size: 12px;
+            color:#4a4a4b;
+          }
+        }
+      }
+    }
+  }
+  

@@ -11,6 +11,8 @@ import { PipesModule } from './pipes/pipes.module';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { environment } from 'src/environments/environment';
 import { ContainerComponent } from './components/container/container.component';
+import { AlphaLayoutComponent } from './components/alpha-layout/alpha-layout.component';
+import { BetaLayoutComponent } from './components/beta-layout/beta-layout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ContainerComponent } from './components/container/container.component';
     ProjectsComponent,
     ExperienceComponent,
     CurriculumVitaeComponent,
-    ContainerComponent
+    ContainerComponent,
+    AlphaLayoutComponent,
+    BetaLayoutComponent
   ],
   imports: [
     BrowserModule,

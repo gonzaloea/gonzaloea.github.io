@@ -4,18 +4,22 @@ export class Job {
     private _description: string;
     private _title: string;
     private _company: string;
+    private _location: string;
     private _skills: string[];
+    private _coreResponsibilities: string[];
 
-    static with(company: string, title: string, description: string, since: Date, skills: string[]) {
-        return new this(company, title, description, since, skills);
+    static with(company: string, title: string, description: string, location: string, since: Date, skills: string[], coreResponsibilities: string[]) {
+        return new this(company, title, description, location, since, skills, coreResponsibilities);
     }
 
-    constructor(company: string, title: string, description: string, since: Date, skills: string[]) {
+    constructor(company: string, title: string, description: string, location: string, since: Date, skills: string[], coreResponsibilities: string[]) {
         this._company = company;
         this._description = description;
         this._since = since;
         this._title = title;
         this._skills = skills;
+        this._coreResponsibilities = coreResponsibilities;
+        this._location = location;
     }
 
     public get company(): string {
@@ -38,8 +42,16 @@ export class Job {
       return new Date();
     }
 
+    public get location(): string {
+        return this._location;
+    }
+
     public get skills(): string[]{
       return this._skills;
+    }
+
+    public get coreResponsibilities(): string[] {
+        return this._coreResponsibilities;
     }
 
     public yearsWorked() {
@@ -60,16 +72,16 @@ export class FinishedJob extends Job{
     private _to: Date;
     private _duration: TimeInterval;
 
-    static finishedWith(company: string, title: string, description: string, since: Date, to: Date, skills: string[]) {
-        return new this(company, title, description, since, to, skills);
+    static finishedWith(company: string, title: string, description: string, location:string, since: Date, to: Date, skills: string[], coreResponsibilities: string[]) {
+        return new this(company, title, description, location, since, to, skills, coreResponsibilities);
     }
 
     static  assertToAfterFrom(from: Date, to: Date) {
         if (from > to) throw new Error(FinishedJob.ERROR_INVALID_INTERVAL);
     }
 
-    constructor(company: string, title: string, description: string, since: Date, to: Date, skills: string[]){
-        super(company, title, description, since, skills);
+    constructor(company: string, title: string, description: string, location:string, since: Date, to: Date, skills: string[], coreResponsibilities: string[]){
+        super(company, title, description, location, since, skills, coreResponsibilities);
         this._to = to;
         this._duration = TimeInterval.between(this._since, this._to);
     }

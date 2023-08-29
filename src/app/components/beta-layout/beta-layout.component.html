@@ -1,0 +1,62 @@
+<div class="first page">
+    <div class="header separated">
+        <h1>{{ professional.name }} {{ professional.surname }}</h1>
+
+        <div class="personal-information">
+            <h2>{{ professional.email }}</h2>
+            <div class="separator">&#11045;</div>
+            <h2>{{ professional.linkedIn}}</h2>
+            <div class="separator">&#11045;</div>
+            <h2>{{ professional.portfolio}}</h2>
+        </div>
+        
+    </div>
+
+    <div class="experience">
+        <h3 class="separated title">EXPERIENCE</h3>
+        <div class="job" *ngFor="let job of professional.jobs">
+            <div class="line">
+                <h3>{{ job.company }}</h3>
+                <h3>{{ job.since | communicativeDate: "MMM. yyyy" }} -
+                    {{ job.to | communicativeDate: "MMM. yyyy" }} ({{
+                    durationFormat(job.duration)
+                    }})</h3>
+            </div>
+            <div class="line">
+                <h4>{{ job.title }}</h4>
+                <h4>{{ job.location }}</h4>
+            </div>
+
+            <div class="line">
+                <ul class="core-responsibilities">
+                    <li *ngFor="let coreResponsibility of job.coreResponsibilities">{{ coreResponsibility }}</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+  
+    <div class="education">
+        <h3 class="separated title">EDUCATION</h3>
+        <div class="degree">
+            <div class="line">
+                <h3>{{ professional.degree.institution }}</h3>
+                <h3>{{ professional.degree.since | communicativeDate: "MMM. yyyy" }} -
+                    {{ today | communicativeDate: "MMM. yyyy" }}</h3>
+            </div>
+            <div class="line">
+                <h4>{{ professional.degree.title }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="certifications">
+        <h3 class="separated title">TECHNICAL SKILLS</h3>
+        <div class="skills">
+            <h4 *ngFor="let skill of allSkills() let isLast = last">
+                {{skill}} <div *ngIf="!isLast">&#11045;</div>
+            </h4>
+        </div>
+    </div>
+
+</div>
