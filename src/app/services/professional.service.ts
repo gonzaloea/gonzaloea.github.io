@@ -27,11 +27,10 @@ export class ProfessionalService {
                         .thatNeededTheSkill('Java')
                         .thatNeededTheSkill('Kotlin')
                         .thatNeededTheSkill('Python')
-                        .thatNeededTheSkill('SQLite')
-                        .thatNeededTheSkill('Bazel')
-                        .thatHadTheCoreResponsibility("Worked closely with data scientists at Branch, a mobile marketing company, to synergize backend systems that underpinned revenue generation strategies.")
-                        .thatHadTheCoreResponsibility("Implemented end-to-end solutions, optimizing performance for data-intensive workloads.")
-                        .thatHadTheCoreResponsibility("Developed tools for data collection, processing, and visualization to enhance insights for the mobile SDK, enabling targeted ad displays across various mobile manufacturers.");
+                        .thatNeededTheSkill('React')
+                        .thatHadTheCoreResponsibility("Successfully contributed to the development of a high-impact platform that aggregated and visualized critical data from multiple mobile advertising platforms.")
+                        .thatHadTheCoreResponsibility("Worked closely with data scientists to synergize backend systems that underpinned revenue generation strategies.")
+                        .thatHadTheCoreResponsibility("Contributed to both backend development and frontend features, as well as data engineering, enhancing the overall functionality and user experience of the platform.");
       })
       .thatWorkedIn( jobBuilder => {
         return jobBuilder.forTheCompany('Ualá')
@@ -54,7 +53,6 @@ export class ProfessionalService {
                         .thatWasToDate(new Date("2022-6-1"))
                         .thatWasLocatedIn('Buenos Aires, Argentina')
                         .thatNeededTheSkill("Angular")
-                        .thatNeededTheSkill("Coaching")
                         .thatNeededTheSkill("Leading")
                         .thatNeededTheSkill("Ionic")
                         .thatNeededTheSkill("Java")
