@@ -36,7 +36,7 @@ export class ProfessionalService {
         return jobBuilder.forTheCompany('Branch')
                         .withTheTitle('Backend Software Engineer')
                         .describedAs('At Branch, a mobile marketing firm, I worked on backend systems supporting revenue strategies. I integrated more than 10 ad networks in three months to ingest ad revenue data, which was processed asynchronously through Kafka in batch mode and consumed by the attribution platform. I implemented solutions with Kotlin, Micronaut, and SQLite to improve data-driven workflows, and developed Python- and Bazel-based tools to optimize insights for the mobile SDK, enabling more accurate ad delivery across mobile platforms.')
-                        .thatWasFromDate(new Date("2024-10-17"))
+                        .thatWasToDate(new Date("2024-10-17"))
                         .thatWasFromDate(new Date("2023-2-21"))
                         .thatWasLocatedIn('San Francisco, CA, USA')
                         .thatNeededTheSkill('Java')
