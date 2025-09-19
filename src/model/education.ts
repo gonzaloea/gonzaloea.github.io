@@ -28,12 +28,19 @@ export class Education {
 export class Course {
     institution: string;
     title: string;
-    since: Date;
+    _since: Date;
 
     constructor(institution: string, title: string, since: Date){
         this.institution = institution;
-        this.since = since;
+        this._since = since;
         this.title = title;
+    }
+    public get since(): Date {
+        return this._since;
+    }
+
+    public get to(): Date  {
+        return new Date();
     }
 }
 
@@ -45,13 +52,21 @@ export class NoCourse extends Course {
 
 
 export class FinishedCourse extends Course{
-    to: Date;
-    duration: TimeInterval;
+    private _to: Date;
+    private _duration: TimeInterval;
 
     constructor(institution: string, title:string, since: Date, to: Date){
         super(institution, title, since);
-        this.to = to;
-        this.duration = TimeInterval.between(this.since, this.to);
+        this._to = to;
+        this._duration = TimeInterval.between(this.since, this.to);
+    }
+
+    public override get to(): Date {
+        return this._to;
+    }
+
+    public get duration(): TimeInterval {
+        return this._duration;
     }
 }
 

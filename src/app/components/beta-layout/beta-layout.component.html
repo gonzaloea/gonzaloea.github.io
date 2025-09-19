@@ -42,7 +42,7 @@
             <div class="line">
                 <h3>{{ professional.degree.institution }}</h3>
                 <h3>{{ professional.degree.since | communicativeDate: "MMM. yyyy" }} -
-                    {{ today | communicativeDate: "MMM. yyyy" }}</h3>
+                    {{ professional.degree.to | communicativeDate: "MMM. yyyy" }}</h3>
             </div>
             <div class="line">
                 <h4>{{ professional.degree.title }}</h4>
